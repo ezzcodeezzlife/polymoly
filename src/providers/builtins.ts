@@ -42,7 +42,7 @@ export const BUILTIN_PROVIDERS: ProviderDef[] = [
         tier: 'frontier',
         contextWindow: 200_000
       },
-      { id: 'haiku', label: 'Haiku 4.5', description: 'Quickest for short answers', defaultEffort: 'high', tier: 'fast', contextWindow: 200_000 }
+      { id: 'haiku', label: 'Haiku 4.5', description: 'Quickest for short answers', defaultEffort: 'high', tier: 'fast', contextWindow: 200_000 },
     ],
     usage: { kind: 'anthropic-admin' }
   },

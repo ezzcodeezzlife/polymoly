@@ -120,7 +120,11 @@ export function findProvider(id: string): ProviderDef | undefined {
   return loadProviders().find((p) => p.id === id);
 }
 
-/** Merges `patch` into the user's global override entry for provider `id`. */
+/**
+ * Merges `patch` into the user's global override entry for provider `id`.
+ * @param id - The provider ID to update
+ * @param patch - The partial provider definition to merge
+ */
 export async function updateProviderOverride(id: string, patch: Partial<ProviderDef>): Promise<void> {
   const config = vscode.workspace.getConfiguration('polyagent');
   const list = [...(config.inspect<Partial<ProviderDef>[]>('providers')?.globalValue ?? [])];
@@ -139,6 +143,10 @@ export async function updateProviderOverride(id: string, patch: Partial<Provider
   await config.update('providers', list, vscode.ConfigurationTarget.Global);
 }
 
+/**
+ * Removes a provider override from the user's global configuration.
+ * @param id - The provider ID to remove
+ */
 export async function removeProviderOverride(id: string): Promise<void> {
   const config = vscode.workspace.getConfiguration('polyagent');
   const list = (config.inspect<Partial<ProviderDef>[]>('providers')?.globalValue ?? []).filter(

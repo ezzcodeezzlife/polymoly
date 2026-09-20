@@ -48,7 +48,7 @@ export interface Conversation {
 const STORAGE_KEY = 'polyagent.conversations';
 const MAX_STORED = 100;
 
-export function newConversation(providerId: string, model?: string): Conversation {
+export function newConversation(providerId: string, model?: string, effort: EffortLevel = 'medium'): Conversation {
   const now = Date.now();
   return {
     id: `c_${now.toString(36)}_${Math.random().toString(36).slice(2, 8)}`,
@@ -57,7 +57,7 @@ export function newConversation(providerId: string, model?: string): Conversatio
     model,
     messages: [],
     providerSessions: {},
-    effort: 'medium',
+    effort,
     thinking: true,
     showTools: true,
     createdAt: now,

@@ -48,6 +48,11 @@ export function isBuiltin(id: string): boolean {
   return BUILTIN_PROVIDERS.some((def) => def.id === id);
 }
 
+/**
+ * Resolves and deduplicates models for a provider, merging configured, fetched, and extra models.
+ * @param def - The provider definition to resolve models for
+ * @returns Provider definition with resolved models
+ */
 function resolveModels(def: ProviderDef): ProviderDef {
   let models = def.models ?? [];
   if (def.modelsFrom === 'codex-cache') {
@@ -67,6 +72,10 @@ function resolveModels(def: ProviderDef): ProviderDef {
   return { ...def, models: all };
 }
 
+/**
+ * Returns the codex CLI home directory path.
+ * @returns Path to codex home directory
+ */
 export function codexHome(): string {
   return process.env.CODEX_HOME || path.join(os.homedir(), '.codex');
 }
@@ -97,6 +106,11 @@ function readCodexModels(): ModelDef[] | undefined {
   }
 }
 
+/**
+ * Finds a provider by its ID from all loaded providers.
+ * @param id - The provider ID to find
+ * @returns Provider definition if found, undefined otherwise
+ */
 export function findProvider(id: string): ProviderDef | undefined {
   return loadProviders().find((p) => p.id === id);
 }

@@ -65,8 +65,16 @@ export const BUILTIN_PROVIDERS: ProviderDef[] = [
     supportsThinking: true,
     efforts: ['low', 'medium', 'high', 'xhigh'],
     models: [
-      { id: 'gpt-5.6-sol', label: 'GPT-5.6-Sol', tier: 'flagship' },
-      { id: 'gpt-5.5', label: 'GPT-5.5', tier: 'balanced' }
+      {
+        id: 'gpt-5.6-sol',
+        label: 'GPT-5.6-Sol',
+        tier: 'flagship'
+      },
+      {
+        id: 'gpt-5.5',
+        label: 'GPT-5.5',
+        tier: 'balanced'
+      }
     ],
     usage: { kind: 'openai-admin' }
   },
@@ -95,9 +103,24 @@ export const BUILTIN_PROVIDERS: ProviderDef[] = [
     supportsThinking: true,
     maxTokens: 8192,
     models: [
-      { id: 'claude-opus-5', label: 'Opus 5', tier: 'flagship', contextWindow: 200_000 },
-      { id: 'claude-sonnet-5', label: 'Sonnet 5', tier: 'balanced', contextWindow: 200_000 },
-      { id: 'claude-haiku-4-5-20251001', label: 'Haiku 4.5', tier: 'fast', contextWindow: 200_000 }
+      {
+        id: 'claude-opus-5',
+        label: 'Opus 5',
+        tier: 'flagship',
+        contextWindow: 200_000
+      },
+      {
+        id: 'claude-sonnet-5',
+        label: 'Sonnet 5',
+        tier: 'balanced',
+        contextWindow: 200_000
+      },
+      {
+        id: 'claude-haiku-4-5-20251001',
+        label: 'Haiku 4.5',
+        tier: 'fast',
+        contextWindow: 200_000
+      }
     ],
     usage: { kind: 'anthropic-admin' }
   }

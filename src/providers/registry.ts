@@ -17,7 +17,7 @@ export function loadProviders(): ProviderDef[] {
   }
 
   for (const raw of configured) {
-    if (!raw || typeof raw.id !== 'string' || !raw.id) {
+    if (!raw?.id) {
       continue;
     }
     const existing = byId.get(raw.id);

@@ -323,11 +323,11 @@ const M: Record<string, Row> = {
 
 export function resolveLanguage(): Lang {
   const setting = vscode.workspace.getConfiguration('polyagent').get<string>('language', 'auto');
-  if ((LANGS as readonly string[]).includes(setting)) {
+  if (LANGS.includes(setting as Lang)) {
     return setting as Lang;
   }
   const ui = vscode.env.language.toLowerCase().slice(0, 2);
-  return (LANGS as readonly string[]).includes(ui) ? (ui as Lang) : 'en';
+  return LANGS.includes(ui as Lang) ? ui as Lang : 'en';
 }
 
 export function format(template: string, vars?: Record<string, string | number>): string {

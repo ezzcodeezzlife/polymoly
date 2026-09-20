@@ -72,7 +72,7 @@ async function storeKey(
   const key = which === 'api' ? apiKeySecret(id) : adminKeySecret(id);
   if (value === '') {
     await context.secrets.delete(key);
-    vscode.window.showInformationMessage(t('cmd.keyDeleted', { id: id }));
+    vscode.window.showInformationMessage(t('cmd.keyDeleted', { id }));
     return;
   }
   await context.secrets.store(key, value);

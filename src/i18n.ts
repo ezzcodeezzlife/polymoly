@@ -199,6 +199,7 @@ const M: Record<string, Row> = {
   'skills.installed': ['Installiert: {names}', 'Installed: {names}', 'Instalado: {names}', 'Installé : {names}', 'تم التثبيت: {names}', '已安装：{names}'],
   'skills.nothingNew': ['Nichts Neues gefunden.', 'Nothing new found.', 'No se encontró nada nuevo.', 'Rien de nouveau trouvé.', 'لم يُعثر على جديد.', '没有发现新内容。'],
   'skills.deleteQuestion': ['Skill „{name}“ löschen? Der Ordner wird entfernt.', 'Delete skill “{name}”? Its folder will be removed.', '¿Eliminar la skill «{name}»? Se borrará su carpeta.', 'Supprimer la skill « {name} » ? Son dossier sera supprimé.', 'حذف المهارة «{name}»؟ سيُزال مجلدها.', '删除技能“{name}”？其文件夹将被移除。'],
+  'skill.applySkill': ['Wende den Skill "{name}" an.', 'Apply the skill "{name}".', 'Aplicar la habilidad "{name}".', 'Appliquer la compétence "{name}".', 'تطبيق المهارة "{name}".', '应用技能“{name}”。'],
   'skills.dialogInstall': ['Skill installieren', 'Install skill', 'Instalar skill', 'Installer la skill', 'تثبيت المهارة', '安装技能'],
   'skills.allFiles': ['Alle Dateien', 'All files', 'Todos los archivos', 'Tous les fichiers', 'كل الملفات', '所有文件'],
 

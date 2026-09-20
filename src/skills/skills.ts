@@ -314,7 +314,7 @@ export function expandSkillInvocation(prompt: string, skills: SkillInfo[]): { pr
     return { prompt };
   }
   const body = fs.readFileSync(skill.file, 'utf8');
-  const rest = match[2]?.trim() || `Wende den Skill "${skill.name}" an.`;
+  const rest = match[2]?.trim() || t('skill.applySkill', { name: skill.name });
   return {
     skill: skill.name,
     prompt: `<skill name="${skill.name}" dir="${skill.dir}">\n${body.trim()}\n</skill>\n\n${rest}`

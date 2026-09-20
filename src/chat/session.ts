@@ -69,6 +69,10 @@ export function newConversation(providerId: string, model?: string, effort: Effo
  * Manages conversation persistence in VS Code's global state.
  * Stores conversation history, titles, and metadata with automatic cleanup
  * to prevent excessive storage usage.
+ *
+ * @remarks
+ * Conversations are sorted by `updatedAt` descending and capped at
+ * `MAX_STORED` entries. Titles auto-derive from the first user message.
  */
 export class ConversationStore {
   constructor(private readonly memento: vscode.Memento) {}

@@ -82,8 +82,16 @@ export function newConversation(providerId: string, model?: string, effort: Effo
    * ```
    */
 export class ConversationStore {
+  /**
+   * Creates a new ConversationStore instance.
+   * @param memento - VS Code Memento for persistent storage
+   */
   constructor(private readonly memento: vscode.Memento) {}
 
+  /**
+   * Retrieves all conversations from storage.
+   * @returns Array of all conversations, sorted by updatedAt descending
+   */
   all(): Conversation[] {
     return this.memento.get<Conversation[]>(STORAGE_KEY, []);
   }

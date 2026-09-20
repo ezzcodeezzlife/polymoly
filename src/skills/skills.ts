@@ -38,7 +38,7 @@ function disabledSkills(): Set<string> {
 
 /** Reads `name` and `description` from the front matter; supports single-line values. */
 export function parseFrontMatter(text: string): Record<string, string> {
-  const match = text.match(/^﻿?---\r?\n([\s\S]*?)\r?\n---/);
+  const match = text.match(/^\uFEFF?---\r?\n([\s\S]*?)\r?\n---/);
   const result: Record<string, string> = {};
   if (!match) {
     return result;

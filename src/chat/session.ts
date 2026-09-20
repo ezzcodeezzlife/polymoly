@@ -57,7 +57,7 @@ export function newConversation(providerId: string, model?: string): Conversatio
     model,
     messages: [],
     providerSessions: {},
-    effort: 'high',
+    effort: 'medium',
     thinking: true,
     showTools: true,
     createdAt: now,

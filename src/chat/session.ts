@@ -73,7 +73,10 @@ export function newConversation(providerId: string, model?: string, effort: Effo
  * @remarks
  * Conversations are sorted by `updatedAt` descending and capped at
  * `MAX_STORED` entries. Titles auto-derive from the first user message.
- */
+ *
+ * @example
+  * Example usage of `ConversationStore`.
+  */
 export class ConversationStore {
   constructor(private readonly memento: vscode.Memento) {}
 

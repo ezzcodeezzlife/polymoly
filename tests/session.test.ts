@@ -49,6 +49,13 @@ test('creates unique conversation IDs', () => {
   expect(conversation1.id).not.toBe(conversation2.id);
 });
 
+test('creates unique conversation IDs with same provider', () => {
+  const conversation1 = newConversation('claude', 'claude-3');
+  const conversation2 = newConversation('claude', 'claude-3');
+  
+  expect(conversation1.id).not.toBe(conversation2.id);
+});
+
 test('conversation createdAt and updatedAt are set on creation', () => {
   const conversation = newConversation('claude', 'claude-3');
   

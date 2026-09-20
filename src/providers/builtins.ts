@@ -1,6 +1,7 @@
 import { ProviderDef } from '../types';
 
 const CLAUDE_EFFORTS = ['low', 'medium', 'high', 'xhigh', 'max'];
+const CODEX_EFFORTS = ['low', 'medium', 'high', 'xhigh'];
 
 /**
  * Providers that ship with the extension. Users override any of these, or add new
@@ -63,7 +64,7 @@ export const BUILTIN_PROVIDERS: ProviderDef[] = [
     modelsFrom: 'codex-cache',
     defaultModel: 'gpt-5.6-sol',
     supportsThinking: true,
-    efforts: ['low', 'medium', 'high', 'xhigh'],
+    efforts: CODEX_EFFORTS,
     models: [
       {
         id: 'gpt-5.6-sol',

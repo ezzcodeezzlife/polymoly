@@ -36,7 +36,7 @@ function disabledSkills(): Set<string> {
   return new Set(vscode.workspace.getConfiguration('polyagent').get<string[]>('skills.disabled', []));
 }
 
-/** Reads `name` and `description` from the front matter; single-line and folded values. */
+/** Reads `name` and `description` from the front matter; supports single-line values. */
 export function parseFrontMatter(text: string): Record<string, string> {
   const match = text.match(/^﻿?---\r?\n([\s\S]*?)\r?\n---/);
   const result: Record<string, string> = {};

@@ -75,8 +75,12 @@ export function newConversation(providerId: string, model?: string, effort: Effo
  * `MAX_STORED` entries. Titles auto-derive from the first user message.
  *
  * @example
-  * Example usage of `ConversationStore`.
-  */
+   * ```typescript
+   * const store = new ConversationStore(context.globalState);
+   * const conversation = store.get('c_abc123_xyz456');
+   * await store.save(conversation);
+   * ```
+   */
 export class ConversationStore {
   constructor(private readonly memento: vscode.Memento) {}
 

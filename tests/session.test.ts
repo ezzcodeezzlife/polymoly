@@ -41,3 +41,10 @@ test('creates conversation with empty providerSessions', () => {
   expect(conversation.providerSessions).toEqual({});
   expect(typeof conversation.providerSessions).toBe('object');
 });
+
+test('creates unique conversation IDs', () => {
+  const conversation1 = newConversation('claude', 'claude-3');
+  const conversation2 = newConversation('codex', 'gpt-4');
+  
+  expect(conversation1.id).not.toBe(conversation2.id);
+});

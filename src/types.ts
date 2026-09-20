@@ -1,4 +1,4 @@
-/** Shared types for providers, streaming events and usage reporting. */
+/** Core types for AI provider adapters, streaming chat events, and usage tracking. */
 
 export type ProviderKind = 'cli' | 'http';
 

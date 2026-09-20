@@ -88,10 +88,19 @@ export class ConversationStore {
     return this.memento.get<Conversation[]>(STORAGE_KEY, []);
   }
 
+  /**
+   * Retrieves a conversation by its ID.
+   * @param id - The conversation ID to retrieve
+   * @returns The conversation if found, undefined otherwise
+   */
   get(id: string): Conversation | undefined {
     return this.all().find((c) => c.id === id);
   }
 
+  /**
+   * Saves a conversation, updating its timestamp and auto-generating title if needed.
+   * @param conversation - The conversation to save
+   */
   async save(conversation: Conversation): Promise<void> {
     conversation.updatedAt = Date.now();
     if (conversation.title === 'Untitled') {
@@ -107,6 +116,10 @@ export class ConversationStore {
     await this.memento.update(STORAGE_KEY, next);
   }
 
+  /**
+   * Removes a conversation by its ID.
+   * @param id - The conversation ID to remove
+   */
   async remove(id: string): Promise<void> {
     await this.memento.update(
       STORAGE_KEY,

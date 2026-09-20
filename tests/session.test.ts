@@ -61,3 +61,19 @@ test('conversation title defaults to Untitled', () => {
   
   expect(conversation.title).toBe('Untitled');
 });
+
+test('conversation messages array is empty and mutable', () => {
+  const conversation = newConversation('claude', 'claude-3');
+  
+  expect(conversation.messages).toEqual([]);
+  expect(Array.isArray(conversation.messages)).toBe(true);
+  
+  conversation.messages.push({
+    id: 'msg_1',
+    role: 'user',
+    text: 'Hello',
+    createdAt: Date.now()
+  });
+  
+  expect(conversation.messages.length).toBe(1);
+});

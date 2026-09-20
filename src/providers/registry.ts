@@ -44,6 +44,11 @@ export function enabledProviders(): ProviderDef[] {
     });
 }
 
+/**
+ * Checks if a provider ID is defined in the built-in providers list.
+ * @param id - The provider ID to check
+ * @returns True if the provider is built-in, false otherwise
+ */
 export function isBuiltin(id: string): boolean {
   return BUILTIN_PROVIDERS.some((def) => def.id === id);
 }
@@ -142,6 +147,10 @@ export async function removeProviderOverride(id: string): Promise<void> {
   await config.update('providers', list, vscode.ConfigurationTarget.Global);
 }
 
+/**
+ * Loads MCP server configurations from the polyagent.mcpServers setting.
+ * @returns Record of MCP server names to their definitions
+ */
 export function loadMcpServers(): Record<string, McpServerDef> {
   return vscode.workspace.getConfiguration('polyagent').get<Record<string, McpServerDef>>('mcpServers', {});
 }
@@ -151,12 +160,20 @@ export function activeMcpServers(): Record<string, McpServerDef> {
   return Object.fromEntries(Object.entries(loadMcpServers()).filter(([, server]) => !server.disabled));
 }
 
-/** Secret storage key for a provider's request API key. */
+/**
+ * Gets the secret storage key for a provider's request API key.
+ * @param providerId - The provider identifier
+ * @returns The secret key name
+ */
 export function apiKeySecret(providerId: string): string {
   return `polyagent.apiKey.${providerId}`;
 }
 
-/** Secret storage key for a provider's usage/admin key. */
+/**
+ * Gets the secret storage key for a provider's usage/admin key.
+ * @param providerId - The provider identifier
+ * @returns The secret key name
+ */
 export function adminKeySecret(providerId: string): string {
   return `polyagent.adminKey.${providerId}`;
 }

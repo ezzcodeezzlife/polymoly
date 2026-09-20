@@ -65,7 +65,11 @@ export function newConversation(providerId: string, model?: string): Conversatio
   };
 }
 
-/** Conversation list persisted in global state. */
+/**
+ * Manages conversation persistence in VS Code's global state.
+ * Stores conversation history, titles, and metadata with automatic cleanup
+ * to prevent excessive storage usage.
+ */
 export class ConversationStore {
   constructor(private readonly memento: vscode.Memento) {}
 

@@ -48,3 +48,16 @@ test('creates unique conversation IDs', () => {
   
   expect(conversation1.id).not.toBe(conversation2.id);
 });
+
+test('conversation createdAt and updatedAt are set on creation', () => {
+  const conversation = newConversation('claude', 'claude-3');
+  
+  expect(conversation.createdAt).toBe(conversation.updatedAt);
+  expect(conversation.createdAt).toBeGreaterThan(0);
+});
+
+test('conversation title defaults to Untitled', () => {
+  const conversation = newConversation('claude', 'claude-3');
+  
+  expect(conversation.title).toBe('Untitled');
+});

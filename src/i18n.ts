@@ -317,7 +317,7 @@ const M: Record<string, Row> = {
   'modeldesc.opus': ['Starker Allrounder für komplexe Arbeit', 'Strong all-rounder for complex work', 'Todoterreno potente para trabajo complejo', 'Polyvalent et puissant pour le travail complexe', 'نموذج متكامل وقوي للأعمال المعقّدة', '适合复杂工作的全能型模型'],
   'modeldesc.sonnet': ['Schnell und sparsam für Routine', 'Fast and economical for routine work', 'Rápido y económico para tareas rutinarias', 'Rapide et économique pour les tâches courantes', 'سريع واقتصادي للمهام الروتينية', '快速经济，适合日常任务'],
   'modeldesc.claude-fable-5-1': ['Maximale Leistung für die schwersten Aufgaben · braucht Usage-Credits', 'Maximum capability for the hardest tasks · needs usage credits', 'Máxima capacidad para las tareas más difíciles · requiere créditos de uso', 'Capacité maximale pour les tâches les plus dures · nécessite des crédits d’utilisation', 'أقصى قدرة لأصعب المهام · يتطلب أرصدة استخدام', '为最难的任务提供最强能力 · 需要用量额度'],
-  'modeldesc.haiku': ['Am schnellsten für kurze Antworten', 'Quickest for short answers', 'El más rápido para respuestas cortas', 'Le plus rapide pour les réponses courtes', 'الأسرع للإجابات القصيرة', '简短回答最快']
+  'modeldesc.haiku': ['Am schnellsten für kurze Antworten', 'Quickest for short answers', 'El más rápido para respuestas cortas', 'Le plus rapide pour les réponses courtes', 'الأسرع للإجابات القصيرة', '简短回答最快'],
 };
 
 export function resolveLanguage(): Lang {

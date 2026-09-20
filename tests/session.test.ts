@@ -34,3 +34,10 @@ test('creates conversation with default effort level', () => {
   
   expect(conversation.effort).toBe('medium');
 });
+
+test('creates conversation with empty providerSessions', () => {
+  const conversation = newConversation('claude', 'claude-3');
+  
+  expect(conversation.providerSessions).toEqual({});
+  expect(typeof conversation.providerSessions).toBe('object');
+});

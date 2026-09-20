@@ -343,7 +343,14 @@ export function t(key: string, vars?: Record<string, string | number>): string {
   return format(lookup(key, resolveLanguage()) ?? key, vars);
 }
 
-/** Translation when the key exists, else undefined. Use for optional text like built-in provider descriptions that may not have translations. */
+/**
+ * Looks up a translation key and returns the translated string if it exists, 
+ * otherwise returns undefined. Use for optional text like built-in provider 
+ * descriptions that may not have translations.
+ * 
+ * @param key - The translation key to look up
+ * @returns The translated string if the key exists, undefined otherwise
+ */
 export function tOptional(key: string): string | undefined {
   return lookup(key, resolveLanguage());
 }

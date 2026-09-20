@@ -88,7 +88,11 @@ export const BUILTIN_PROVIDERS: ProviderDef[] = [
     defaultModel: 'MiniMax-M2',
     maxTokens: 8192,
     models: [
-      { id: 'MiniMax-M2', label: 'MiniMax M2', pricing: { input: 0.3, output: 1.2 } }
+      {
+        id: 'MiniMax-M2',
+        label: 'MiniMax M2',
+        pricing: { input: 0.3, output: 1.2 }
+      }
     ],
     usage: { kind: 'minimax-token-plan' }
   },

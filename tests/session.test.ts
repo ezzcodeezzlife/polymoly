@@ -22,3 +22,15 @@ test('creates conversation without model', () => {
   expect(conversation.providerId).toBe('codex');
   expect(conversation.model).toBeUndefined();
 });
+
+test('creates conversation with custom effort level', () => {
+  const conversation = newConversation('claude', 'claude-3', 'high');
+  
+  expect(conversation.effort).toBe('high');
+});
+
+test('creates conversation with default effort level', () => {
+  const conversation = newConversation('claude', 'claude-3');
+  
+  expect(conversation.effort).toBe('medium');
+});
